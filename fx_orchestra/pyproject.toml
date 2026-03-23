@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fx_orchestra"
+version = "0.1.0"
+description = "FX Orchestra multi-agent trading scaffold"
+requires-python = ">=3.11"
+readme = "README.md"
+authors = [{name = "BOT-TRADE-DEMO"}]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
