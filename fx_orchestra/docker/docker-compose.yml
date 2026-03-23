@@ -1,4 +1,6 @@
 services:
   fx_orchestra:
-    build: ..
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
     command: python src/main.py
