@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from orchestrator.hybrid_flow import run_hybrid_flow
+from .hybrid_flow import run_hybrid_flow
 
 
 def run_paper() -> list[dict]:

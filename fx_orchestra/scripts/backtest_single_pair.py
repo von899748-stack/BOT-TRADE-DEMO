@@ -18,11 +18,12 @@ from data.sources.oanda_v20 import OandaV20Source
 def backtest(symbol: str) -> dict:
     source = OandaV20Source()
     candles = source.fetch_ohlcv(symbol, date(2010, 1, 1), date.today())
-    signal = sma_signal(candles)
 
     equity = 1.0
+    signal = 0.0
     prev_close = float(candles[0]["close"])
-    for candle in candles[1:]:
+    for idx, candle in enumerate(candles[1:], start=1):
+        signal = sma_signal(candles[:idx])
         close = float(candle["close"])
         ret = (close - prev_close) / prev_close
         equity *= 1 + ret * signal
