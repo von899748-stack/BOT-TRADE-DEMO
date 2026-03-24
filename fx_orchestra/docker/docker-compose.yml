@@ -1,4 +1,0 @@
-services:
-  fx_orchestra:
-    build: ..
-    command: python src/main.py
